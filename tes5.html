@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danger Alert</title>
+</head>
+<body>
+    <center>
+    <button onclick="countdown()">Munculkan Alert!</button>
+    <div id="countdown"></div>
+    
+    <script>
+      // countdown untuk menghitung mundur
+      function countdown() {
+        let count = 5;
+        // Mengatur interval untuk menjalankan fungsi setiap detik
+        let interval = setInterval(function() { 
+          document.getElementById("countdown").innerHTML =  `Danger! Alert akan tertutup dalam: ${count}`; 
+          count--; // untuk mengurangi nilai count sebesar 1 setiap kali interval sudah berhasil di jalankan
+          if (count < 0) {
+            clearInterval(interval);
+            document.getElementById("countdown").innerHTML = ""; //jika nilai count sudah kurang dari 0 maka interval akan di hentikan 
+            //dan pesan countdown akan dihapus 
+          }
+        }, 1000 ); // ini adalah setingan waktu untuk hitungan mundur dari count, semakin banyak milidetiknya maka semakin lama hitungan mundur nya
+      }
+    </script>
+</center>
+</body>
+</html>

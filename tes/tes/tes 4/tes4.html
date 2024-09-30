@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opacity</title>
+</head>
+<body>
+    <center>
+        <select id="pilihGambar">
+            <option value="img/bandung.jpeg">Gambar 1</option>
+            <option value="img/bali.jpeg">Gambar 2</option>
+            <option value="img/download1.jpeg">Gambar 3</option>
+        </select>
+
+        <select id="pilihOpacity">
+            <option value="1">1</option>
+            <option value="0.5">0.5</option>
+            <option value="0.2  ">0.2</option>
+        </select>
+
+        <input type="submit" value="Ubah" onclick="filterOpacity()"></input>
+        <img id="displayGambar" src="img/bandung.jpeg" alt="gambarTerpilih" style="opacity:1; width: 300px;">
+
+        <script>
+
+            function filterOpacity() {
+            var pilihGambar = document.getElementById("pilihGambar");
+            var pilihOpacity = document.getElementById("pilihOpacity");
+            var displayGambar = document.getElementById("displayGambar");
+    
+            var gamterpilih = pilihGambar.value;
+            var opTerpilih = pilihOpacity.value;
+    
+            displayGambar.src = gamterpilih;
+            displayGambar.style.opacity = opTerpilih;
+            }
+    
+        </script>
+    </center>
+</body>
+</html>
